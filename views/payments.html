@@ -1,0 +1,130 @@
+<div ng-controller="paymentsCtrl">
+    <h4>payments</h4>
+<!--<div class="row">-->
+    <!--<div class="col-md-12">-->
+        <!--<div style="border:1px solid #dedede;height:70px;">-->
+            <!--<div style="padding-top:10px;">-->
+                <!--<div class="col-md-3">-->
+                    <!--<label>Contractor</label>-->
+                    <!--<p>Viswanadh Sanitary Works Pvt Ltd</p>-->
+                <!--</div>-->
+                <!--<div class="col-md-1">-->
+                    <!--<label>Period</label>-->
+                    <!--<p>May-17</p>-->
+                <!--</div>-->
+                <!--<div class="col-md-2">-->
+                    <!--<label>Assigned Workpackages</label>-->
+                    <!--<select class="form-control" style="height:28px;"><option>GMC/001-Guntur</option><option>GMC/039-Guntur</option></select>-->
+
+                <!--</div>-->
+                <!--<div class="col-md-2">-->
+                    <!--<label>No of Micropockets</label>-->
+                    <!--<p>02</p>-->
+                <!--</div>-->
+                <!--<div class="col-md-2">-->
+                    <!--<label>Total Payment</label>-->
+                    <!--<p style="color:#0084a9;font-weight: 700">  1,55892.22</p>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--</div>-->
+
+
+    <!--</div>-->
+<!--</div>-->
+    <!--<div class="row m-t-10">-->
+        <!--<div class="col-md-12">-->
+            <!--<table class="table table-bordered  my-scrollabletable" >-->
+                <!--<thead style="background-color:#F6F8FA;color:#0084a9;font-size:15px">-->
+                <!--<tr class="contract-penality-page">-->
+                    <!--<th>Key Indicator</th>-->
+                    <!--<th>Sub Indicator</th>-->
+                    <!--<th>Target</th>-->
+                    <!--<th>Actual</th>-->
+                    <!--<th>Variance</th>-->
+                    <!--<th>Benchmark</th>-->
+                    <!--<th>Weightage</th>-->
+                    <!--<th>Penality<br>(Sub Indicator)</th>-->
+                    <!--<th>Penality<br>(Key Indicator)</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--<tr>-->
+                    <!--<td>Absenteeism</td>-->
+                    <!--<td class="text-left-payment">Absenteeism (PH Worker / Supervisor)</td>-->
+                    <!--<td>15645</td>-->
+                    <!--<td>12856</td>-->
+                    <!--<td>17.83%</td>-->
+                    <!--<td>100%</td>-->
+                    <!--<td>10%</td>-->
+                    <!--<td>3565.36</td>-->
+                    <!--<td>3565.36</td>-->
+
+                <!--</tr>-->
+                <!--<tr class="table-alternate-color">-->
+                    <!--<td >Coverage</td>-->
+                    <!--<td class="text-left-payment">Door to Door (Distance in KM)</td>-->
+                    <!--<td>15.05</td>-->
+                    <!--<td>12.9</td>-->
+                    <!--<td>14.29%</td>-->
+                    <!--<td>100%</td>-->
+                    <!--<td>20%</td>-->
+                    <!--<td>5714.29</td>-->
+                    <!--<td>5714.29</td>-->
+
+                <!--</tr>-->
+                <!--<tr ><td rowspan="3">Weighment</td></tr>-->
+                <!--<tr><td>Dry (Tons)</td><td>114</td><td>79.5</td><td>30.26%</td><td>80%</td><td>20%</td><td>12105.26</td><td rowspan="3">11594.80</td></tr>-->
+                <!--<tr><td>Wet (Tons)</td><td>830</td><td>600</td><td>27.71%</td><td>80%</td><td>20%</td><td>11084.34</td></tr>-->
+                <!--<tr class="table-alternate-color"><td rowspan="3">Transportation</td></tr>-->
+                <!--<tr class="table-alternate-color"><td>Deployment (No of vehicles)</td><td>150</td><td>90</td><td>40.00%</td><td>100%</td><td>10%</td><td>8000.00</td><td rowspan="3">4833.33</td></tr>-->
+                <!--<tr class="table-alternate-color"><td>Collection Point Coverage</td><td>600</td><td>550</td><td>8.33%</td><td>100%</td><td>10%</td><td>1666.67</td></tr>-->
+                <!--<tr><td rowspan="3">Greviances</td></tr>-->
+                <!--<tr><td>% of calls outside SLA</td><td>0%</td><td>58%</td><td>58.0%</td><td>10%</td><td>10%</td><td>11600.00</td><td rowspan="3">4833.33</td></tr>-->
+                <!--<tr><td>Average citizen rating</td><td>5</td><td>3.9</td><td>22.00%</td><td>80%</td><td>10%</td><td>4400.00</td></tr>-->
+                <!--<tr class="table-alternate-color"><td rowspan="4">Cleanliness</td></tr>-->
+                <!--<tr class="table-alternate-color"><td>Blackspot conversion (Black to Green)</td><td>100%</td><td>72%</td><td>28.0%</td><td>80%</td><td>10%</td><td>5600.00</td><td rowspan="3">4733.33</td></tr>-->
+                <!--<tr class="table-alternate-color"><td>Blackspot conversion (Green to Black)</td><td>0%</td><td>22%</td><td>22.00%</td><td>80%</td><td>10%</td><td>4400.00</td></tr>-->
+                <!--<tr class="table-alternate-color"><td>% of MP without blackspots</td><td>100%</td><td>79%</td><td>21.00%</td><td>80%</td><td>10%</td><td>4200.00</td></tr>-->
+                <!--<tr>-->
+                    <!--<td>Payments</td>-->
+                    <!--<td class="text-left-payment">Payment Receipts</td>-->
+                    <!--<td>100%</td>-->
+                    <!--<td>90%</td>-->
+                    <!--<td>10%</td>-->
+                    <!--<td>100%</td>-->
+                    <!--<td>20%</td>-->
+                    <!--<td>4000.00</td>-->
+                    <!--<td>4000.00</td>-->
+
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+        <!--</div>-->
+
+
+    <!--</div>-->
+    <!--<div class="row m-d-30" >-->
+
+            <!--<div class="col-md-3 col-md-offset-9">-->
+                <!--<div class="well well-sm">-->
+                    <!--<div class="row total-payment-font">-->
+                        <!--<div class="col-md-6">-->
+                            <!--<p>Actual Payment </p>-->
+                            <!--<p>Penality</p>-->
+                            <!--<p>Final Payment</p>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-5" >-->
+                            <!--<p> : 2,00000.00</p>-->
+                            <!--<p> : 44,107.78</p>-->
+                            <!--<p style="color:#0084a9;font-weight: 700"> : 1,55892.22</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+    <!--</div>-->
+
+    </div>
+

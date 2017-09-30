@@ -1,0 +1,52 @@
+<div ng-controller="absenteeism_TodayCtrl">
+       <div class="row m-t-10 m-d-30">
+        <div class="col-md-12">
+            <table class="table m-d-30 table-bordered table-body my-scrollabletable">
+                <thead style="background-color:#f6f8fa;color:#000;">
+                <tr>
+                    <th rowspan="2" class="text-center" style="vertical-align: middle">{{Parent}}</th>
+                    <!--<th rowspan="2" class="text-center" style="vertical-align: middle">Benchmark</th>-->
+                    <!--<th rowspan="2" class="border-bom-wht"></th>-->
+                    <th rowspan="2" class="text-center">Present</th>
+                    <!--<th  class="border-bom-wht"></th>-->                    
+                    <th rowspan="2" class="text-center">Total Employees</th>
+                    <!--<th rowspan="2" class="border-bom-wht"></th>-->
+                    <th rowspan="2" style="vertical-align: middle" class="text-center">Variance</th>
+                    <!--<th rowspan="2" style="vertical-align: middle" class="text-center">Action</th>-->
+                </tr>
+                </thead>
+
+                <tbody style="height:40px">
+                <div class="overlay-gif">
+                    <div class="loading-img"></div>
+                </div>
+                <tr class="width-adjust">
+                    <td>{{parentarr.Name}}</td>
+                    <!--<td >
+                       
+                        <div class="table-number-widget"><span class="glyphicon glyphicon-ok wt-bencmak-ok-icon"></span></div>
+
+                    </td>
+                    <td class="border-bom-wht"></td>-->
+                    <td >
+                        <!--<div class="table-name-widget text-center">Total Employess</div>-->
+                        <div class="table-number-widget">{{parentarr.EmployeesPresent}}</div>
+
+                    </td>
+                    <!--<td  class="border-bom-wht"></td>-->
+                    <td>
+                        <div class="table-number-widget">{{parentarr.TotalEmployees}}</div>
+                    </td>
+                    <!--<td  class="border-bom-wht"></td>-->
+                    <td >
+                        <div class="table-number-widget">{{parentarr.Variance}}</div>
+                    </td>
+                    <!--<td >
+                        <div class="table-number-widget"><a href="javascript:void(0)" ng-click='openNavweighment(parentarr.Id,parentarr.type)'><span class="glyphicon glyphicon-info-sign" style="font-size:22px;"></span></a></div>
+                    </td>-->
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> 
+</div>

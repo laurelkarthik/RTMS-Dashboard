@@ -1,0 +1,199 @@
+    <div class="my-custom-override" ng-controller="layoutCtrl">
+        <!-- start navigationbar -->
+    <div class="navbar navbar-default ">
+        <div class="navbar-header">
+            <div class="navbar-brand">Real-Time Monitoring System</div>
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".btnCollapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse btnCollapse">
+            <!--<ul class="nav nav-6 navbar-nav navbar-right">-->
+            <!--<li class="active"><a href="#">Shop</a></li>-->
+            <!--<li class="dropdown">-->
+            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Artist <span class="caret"></span></a>-->
+            <!--<ul class="dropdown-menu dropdown-menu-6" role="menu">-->
+            <!--<li><a href="#">Rich</a></li>-->
+            <!--<li><a href="#">Shay</a></li>-->
+            <!--<li><a href="#">Jose</a></li>-->
+            <!--<li><a href="#">Marie</a></li>-->
+            <!--<li><a href="#">Simon</a></li>-->
+            <!--<li><a href="#">Jamie</a></li>-->
+            <!--<li><a href="#">Andrew</a></li>-->
+            <!--<li><a href="#">Teddie</a></li>-->
+            <!--</ul>-->
+            <!--</li>-->
+            <!--<li><a href="#">FAQs</a></li>-->
+            <!--<li><a href="#">Contact</a></li>-->
+            <!--</ul>-->
+        </div>
+    </div>
+        <!-- End navigationbar -->
+        <!-- Start breadcrumbs -->
+        <div class="row" style="border-bottom: 1px solid #dedede">
+        <div class="arrow-steps-breadrumb-content">
+            <div class="col-md-9">
+                <div class="arrow-steps-breadcrumb clearfix " id="breadcrumbsdiv">
+                    <div class="step" style="min-width:30px;padding:0px;" id="state" ng-click="regionParamsFun('state');" ><img src="assets/img/home.png" style="width:25px;height:25px;margin:8px 0 0 3px"></div>
+                    <div class="step" id="region" style="display: none;" ng-click="regionParamsFun('regionname');"><span id="regionname">Rajahmundry</span><span><div>Region</div></span></div>
+                    <div class="step" id="district" style="display: none;" ng-click="regionParamsFun('districtname');" ><span id="districtname">East Godavari</span><span><div>District</div></span></div>
+                    <div class="step" id="ulbdiv" style="display: none;" ng-click="regionParamsFun('ulbname');"><span id="ulbname">Rajahmundry</span><span><div>ULB</div></span></div>
+                    <div class="step" id="contractordiv" style="display: none;" ng-click="regionParamsFun('contractorname');"><span id="contractorname">Rajahmundry</span><span><div>Contractor</div></span></div>
+                    <div class="step" id="wpdiv" style="display: none;" ng-click="regionParamsFun('wpname');"><span id="wpname">Rajahmundry</span><span><div>Work Package</div></span></div>
+                    <div class="step" id="warddiv" style="display: none;" ng-click="regionParamsFun('wardname');"><span id="wardname">Rajahmundry</span><span><div>Ward</div></span></div>
+                    <div class="step" id="mpdiv" style="display: none;" ng-click="regionParamsFun('mpname');"><span id="mpname">Rajahmundry</span><span><div>Micropocket</div></span></div>                                        
+                    <!--<div class="step"><span>RJY/WP/003<br><div>Work Package</div></span></div>-->
+                </div>
+            </div>
+            <div class="col-md-3">
+                <span class="pull-right" style="color:#000;font-weight:600; margin:10px 10px 0px 0px;">Report Period :<span id="Report_period" class="colorblue"></span> </span>
+            </div>
+        </div>
+
+
+    </div>
+        <!-- End breadcrumbs -->
+        <!-- Start slider -->
+    <div style="background-color:#fff;border-bottom:1px solid #dedede;height:40px;">
+        <div class="row ">
+            <div class="col-md-8 p-t-10">
+                <div id="sam"></div>
+            </div>
+            <div class="col-md-2 p-t-10 ">
+                <div id="custom-arrows" class="text-center">
+                   <span> <button id="leftAerrow"  class="arrow right" onclick="forwordDate()"><i class="fa fa-left"></i></button></span>
+                    <span><button id="rightAerrow"  class="arrow left"onclick="backwordDate()" ><i class="fa fa-right"></i></button></span>
+                </div>
+            </div>
+            <div class="col-md-2 ">
+                <div class="btn-group " id="btn-group-slide">
+                    <button type="button" id="today" class="btn btn-default custom-today-button" ng-click="updatedDate('today','today','1')">Today</button>
+                    <button type="button" id="week" class="btn btn-default custom-today-button" ng-click="updatedDate('range','week','2')">7 Days</button>
+                    <button type="button" id="month" class="btn btn-default custom-today-button" ng-click="updatedDate('range','month','3')">Month</button>
+                    <!--<button type="button" class="btn btn-default custom-today-button">Custom</button>-->
+                </div>
+            </div>
+            <div class="col-md-1">
+                <!--<a class="btn btn-primary" style="background-color:#0084a9;margin-top:2px;">Apply</a>-->
+            </div>
+        </div>
+        
+
+    </div>
+        <!-- End slider -->
+        <!-- Start content-view -->
+  <div id="container_div" class="tab-content current" >
+    <div ui-view autoscroll="false"></div>
+  </div>
+        <!-- End content-view -->
+
+        <!-- Start tabs -->
+    <ul class="tabs text-center" style="position:fixed;height:43px;bottom:1px;background-color:#fff;width:100%;z-index:10">
+            <!--<li class="tab-link" id="performances" ng-click="updatedstate('performances')" style="border-left:1px solid #dedede"><i class="fa fa-globe" style="color:#0084a9"></i>&nbspPerformances</li>-->
+            <li class="tab-link" id="overall" ng-click="updatedstate('overall')" style="border-left:1px solid #dedede"><i class="fa fa-globe" style="color:#0084a9"></i>&nbspOver All</li>
+            <li class="tab-link" id="absenteeism" ng-click="updatedstate('absenteeism')"><img src="assets/img/absent1%20(1).png" style="height:20px;width:20px;" id="Absenteeism">&nbsp Absenteeism</li>
+            <li class="tab-link" id="coverage" ng-click="updatedstate('coverage')"><img src="assets/img/cover2.png" style="height:15px;width:20px;" id="coverage">&nbsp Coverage</li>
+            <li class="tab-link" id="weighment" ng-click="updatedstate('weighment')"><img src="assets/img/weighment1.png" style="height:20px;width:20px;" id="Weighment">&nbspWeighment</li>
+            <li class="tab-link" id="transportation" ng-click="updatedstate('transportation')"><img src="assets/img/dumper-truck.png" style="height:24px;width:24px;" id="transport">&nbspTransportation</li>
+            <li class="tab-link" id="grievance" ng-click="updatedstate('grievance')"><img src="assets/img/grievance1.png" style="height:20px;width:20px;" id="Grievance">&nbsp Grievance</li>
+            <li class="tab-link" id="cleanliness" ng-click="updatedstate('cleanliness')"><img src="assets/img/clean.png" style="height:20px;width:20px;" id="Cleaness">&nbsp BlackSpots</li>            
+            <li class="tab-link" id="payments" ng-click="updatedstate('payments')"><img src="assets/img/payment1%20(1.1).png" style="height:20px;width:20px;" id="Payments">&nbsp Payments</li>                        
+    </ul>
+        <!-- End tabs -->
+
+
+
+       <a id="menu-toggle-right" href="" class="btn btn-primary toggle"><img src="assets/img/filter.png"></a>
+        <!-- Star sidebar-overlay -->
+       <div id="sidebar-wrapper-right">
+    <ul class="sidebar-nav-right">
+        <li class="sidebar-brand-right">
+            <a id="menu-close-right" href="#" class="" style="font-size:30px">&times</a>
+        </li>
+        <li >
+            <ul class="tabs-nav">
+                <li class=""><a href="#tab1" rel="nofollow">Regions</a>
+                </li>
+                <li class="tab-active"><a href="#tab2" rel="nofollow">Districts</a>
+                </li>
+                <li><a href="#tab3" rel="nofollow">ULB</a>
+                </li>
+                <li><a href="#tab4" rel="nofollow" style="width:100px;">Contractor</a>
+                </li>
+            </ul>
+            <div class="tabs-stage">
+                <div id="tab1" style="display: none;" class="m-t-25 div-close">
+                    <div class="form-group">  <input type="text" class="form-control m-t-10" placeholder="Search" ng-model= "RegionSearch"
+                                 style="width:99%;border-radius:0;box-shadow:inset  0  1px 1px -1px #fff;">
+                 <span style="cursor:pointer"   class="glyphicon glyphicon-remove form-control-feedback" data-ng-click="RegionSearch = '' "></span>
+                 </div>
+                    <!--<div class="form-group col-md-12 m-t-25">-->
+                        <!--<div class="form-group ">-->
+                            <!--<input type="text" class="form-control" id="inputValidation" placeholder="Search"/>-->
+                            <!--<span class="glyphicon glyphicon-remove form-control-feedback" style="cursor: pointer"></span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="regions-view-div" ng-repeat="RegionList in RegionListObj | filter:RegionSearch" ng-click="filterdatafn(RegionList,'region')">{{RegionList.region}}</div>
+                    <!--<div class="regions-view-div">Rajamundary</div>
+                    <div class="regions-view-div">Ananthapur</div>
+                    <div class="regions-view-div">Visakhapatnam</div>
+                    <div class="regions-view-div">Guntur</div>-->
+                </div>
+                <div id="tab2" style="display: block;"  class="div-close">
+                    <!--<div>  <input type="text" class="form-control m-t-10" placeholder="Search" ng-model="DistSearch"-->
+                                 <!--style="width:100%;border-radius:0;box-shadow:inset  0  1px 1px -1px #fff;"></div>-->
+                    <div class="form-group">  <input type="text" class="form-control m-t-10" placeholder="Search" ng-model= "DistSearch"
+                                                     style="width:99%;border-radius:0;box-shadow:inset  0  1px 1px -1px #fff;">
+                        <span style="cursor:pointer"   class="glyphicon glyphicon-remove form-control-feedback" data-ng-click="DistSearch = '' "></span>
+                    </div>
+ <div class="m-d-30 region-view-scroll">
+     <div class="regions-view-div" ng-repeat="DistList in DistListObj | filter:DistSearch" ng-click="filterdatafn(DistList,'district')">{{DistList.DistrictName}}</div>
+ </div>
+
+
+                </div>
+                <div id="tab3" style="display: block;"  class="div-close">
+                    <!--<input type="text" class="form-control m-t-10" placeholder="Search" ng-model="UlbName"-->
+                           <!--style="width:100%;border-radius:0;box-shadow:inset  0  1px 1px -1px #fff;"> -->
+                    <div class="form-group">  <input type="text" class="form-control m-t-10" placeholder="Search" ng-model= "Ulbsearch"
+                                                     style="width:99%;border-radius:0;box-shadow:inset  0  1px 1px -1px #fff;">
+                        <span style="cursor:pointer"   class="glyphicon glyphicon-remove form-control-feedback" data-ng-click="UlbName = '' "></span>
+                    </div>
+                    <div class="m-d-30 region-view-scroll">
+                             <div class="regions-view-div" ng-repeat="UlbList in  UlbListObj | filter:Ulbsearch" ng-click="filterdatafn(UlbList,'ULB')"> {{UlbList.ULBName}} </div>
+</div>
+                </div>
+                <div id="tab4" style="display: block;"  class="div-close">
+                    <!--<div>  <input type="text" class="form-control m-t-10" placeholder="Search" ng-model="DistSearch"-->
+                    <!--style="width:100%;border-radius:0;box-shadow:inset  0  1px 1px -1px #fff;"></div>-->
+                    <div class="form-group">  <input type="text" class="form-control m-t-10" placeholder="Search" ng-model= "ContractorSearch"
+                                                     style="width:99%;border-radius:0;box-shadow:inset  0  1px 1px -1px #fff;">
+                        <span style="cursor:pointer"   class="glyphicon glyphicon-remove form-control-feedback" data-ng-click="ContractorSearch = '' "></span>
+                    </div>
+                    <div class="m-d-30 region-view-scroll">
+                        <div class="regions-view-div" ng-repeat="contractor in ContractorListObj | filter:ContractorSearch" ng-click="filterdatafn(contractor,'contractor')">{{contractor.ContractorName}}</div>
+                    </div>
+
+
+                </div>
+            </div>
+        </li>
+        <!--<li  class="right-cust-alert">-->
+        <!--<a href="#">Customers</a>-->
+        <!--</li>-->
+        <!--<li  class="right-cust-alert">-->
+        <!--<a href="#">Create Distributor</a>-->
+        <!--&lt;!&ndash;<i class="glyphicon glyphicon-remove pull-right" style="top: 19px;right: 9px;"></i>&ndash;&gt;-->
+        <!--</li>-->
+        <!--<li  class="right-cust-alert">-->
+        <!--<a href="#">Create Packages</a>-->
+        <!--</li>-->
+    </ul>
+</div>
+        <!-- End sidebar-overlay -->
+        </div>
+   <!--<div class="page-breadcrumbs" data-ng-include=" 'views/partials/breadcrumbs.html' ">-->
+
+

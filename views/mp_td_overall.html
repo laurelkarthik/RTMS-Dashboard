@@ -1,0 +1,337 @@
+<div ng-controller="dashboardCtrl">
+    <!-- start databoxes -->
+            <div class="row">
+                <div class="col-md-4 ">
+                    <div class="widget">
+                        <div class="widget-heading clearfix">
+                            <div class="pull-left">Weighment</div>
+                            <!--<div class="pull-right"><i class="fa fa-angle-down"></i> 40.5<sup>%</sup></div>-->
+                        </div>
+                        <div class="widget-body clearfix">
+                            <div class="row m-t-10">
+                               <div class="overlay-gif">
+                                 <div class="loading-img"></div>
+                               </div>
+                               <div class="col-md-6" style="border-right:1px solid#dedede">
+                                    <div class="text-center name-widget">Wet</div>
+                                    <div class="table-number-widget m-t-2">{{Math.round(state.WetWeightActual)}} Tons</div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0"
+                                             aria-valuemax="100" style="width:{{Math.round(100*state.WetWeightActual / state.WetWeightTarget)}}%">
+                                            <span class="sr-only">{{Math.round(100*state.WetWeightActual / state.WetWeightTarget)}}% Complete</span>
+                                        </div>
+                                    </div>
+                                    <div class="pull-left table-number-percent" style="font-size:13px">{{Math.round(100*state.WetWeightActual / state.WetWeightTarget)}}% </div>
+                                    <div class="pull-right table-number-percent" style="font-size:13px">{{state.WetWeightTarget}}</div>
+                                    <!--<div class="number-widget m-t-5">9,600 Tons-->
+                                    <!--</div>-->
+                                    <!--<div class="trget-widget m-t-5">Target Tons 11,200-->
+                                    <!--</div>-->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="text-center name-widget">Dry</div>
+                                    <div class="table-number-widget m-t-2">{{Math.round(state.DryWeightActual)}} Tons</div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                                             aria-valuemax="100" style="width:{{Math.round(100*state.DryWeightActual / state.DryWeightTarget)}}%">
+                                            <span class="sr-only">{{Math.round(100*state.DryWeightActual / state.DryWeightTarget)}}% Complete</span>
+                                        </div>
+                                    </div>
+                                    <div class="pull-left table-number-percent" style="font-size:13px">{{Math.round(100*state.DryWeightActual / state.DryWeightTarget)}}% </div>
+                                    <div class="pull-right table-number-percent" style="font-size:13px">{{state.DryWeightTarget}}</div>
+                                    <!--<div class="number-widget m-t-5">2,400 Tons-->
+                                    <!--</div>-->
+                                    <!--<div class="trget-widget m-t-5">Target Tons 2,800-->
+                                    <!--</div>-->
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 m-t-10">
+                                    <div class="text-center">
+                                        <p class="name-widget">Total</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                                             aria-valuemax="100" style="width:{{Math.round(100*state.TotalWeightActual/state.TotalWeightTarget)}}%">
+                                            <span class="sr-only">{{Math.round(100*state.TotalWeightActual/state.TotalWeightTarget)}}% Complete</span>
+                                        </div>
+                                    </div>
+                                    <div class="pull-left number-percent">{{Math.round(state.TotalWeightActual)}} Tons</div>
+                                    <div class="pull-right number-percent">{{state.TotalWeightTarget}} Tons</div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="widget">
+                        <div class="widget-heading clearfix">
+                            <div class="pull-left">Absenteeism</div>
+                            <!--<div class="pull-right"><i class="fa fa-angle-up"></i> 89.9<sup>%</sup></div>-->
+                        </div>
+                        <div class="widget-body clearfix">
+                               <div class="overlay-gif">
+                                 <div class="loading-img"></div>
+                               </div>
+                            <div class="name-widget text-center m-t-10">Total Employess</div>
+                            <div class="number-widget">{{state.AttendanceTotal}}</div>
+                            <hr>
+                            <div class="m-t-10">
+                                <div class="name-widget text-center m-t-10">Present Employess</div>
+                                <div class="progress m-t-10">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                                         aria-valuemax="100" style="width:{{Math.round(100*state.AttendancePresent/state.AttendanceTotal)}}%">
+                                        <span class="sr-only">70% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="text-center number-percent">{{state.AttendancePresent}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="widget">
+                        <div class="widget-heading clearfix">
+                            <div class="pull-left">Grievance</div>
+                            <!--<div class="pull-right"><i class="fa fa-angle-up"></i> 89.9<sup>%</sup></div>-->
+                        </div>
+                        <div class="widget-body clearfix">
+                               <div class="overlay-gif">
+                                 <div class="loading-img"></div>
+                               </div>
+                            <div class="name-widget text-center">Total Grievance</div>
+                            <div class="number-widget m-t-5">{{state.GrievanceOpen}}</div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12 grevience-progress-color">
+                                    <div class="text-center">
+                                        <p class="name-widget">SLA Performance</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                                             aria-valuemax="100" style="width:{{Math.round(100*state.GrievanceWithinSLA/state.GrievanceOpen)}}%">
+                                            <span class="sr-only">70% Complete</span>
+                                        </div>
+                                    </div>
+                                    <div class="pull-left number-percent">{{state.GrievanceWithinSLA}} Within SLA</div>
+                                    <div class="pull-right number-percent">{{state.GrievanceOutsideSLA}} Outside SLA</div>
+                                </div>
+                            </div>
+
+                            <!--<div class="col-md-12 m-t-10">-->
+                                <!--<div class="col-md-6" style="border-right:1px solid#dedede">-->
+                                    <!--<div class="text-center name-widget">Within SLA</div>-->
+                                    <!--<div class="number-widget m-t-5">5,283-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash;<div class="trget-widget">Target Tons 540&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                                <!--</div>-->
+                                <!--<div class="col-md-6">-->
+                                    <!--<div class="text-center name-widget">Outside SLA</div>-->
+                                    <!--<div class="number-widget m-t-5">5,283-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash;<div class="trget-widget">Target Tons 300&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--</div>-->
+
+                            <!--</div>-->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div style="margin-bottom:15px;">
+                <div class="row">
+                <div class="col-md-4 ">
+                    <div class="widget">
+                        <div class="widget-heading clearfix">
+                            <div class="pull-left">Blackspots</div>
+                            <!--<div class="pull-right"><i class="fa fa-angle-up"></i> 89.9<sup>%</sup></div>-->
+                        </div>
+                        <div class="widget-body clearfix">
+                            <div class="row m-t-10">
+                                <div class="overlay-gif">
+                                 <div class="loading-img"></div>
+                               </div>
+                                <div class="col-md-6" style="border-right:1px solid#dedede">
+                                    <div class="text-center name-widget">Black to Green</div>
+                                    <div class="number-widget m-t-5">{{state.BlackToGreen}}
+                                    </div>
+                                    <!--<div class="pull-left table-number-percent">30% </div>-->
+                                    <!--<div class="pull-right table-number-percent">2,800</div>-->
+                                    <!--<div class="number-widget m-t-5">2,400 Tons-->
+                                    <!--</div>-->
+                                    <!--<div class="trget-widget m-t-5">Target Tons 2,800-->
+                                    <!--</div>-->
+                                </div>
+                                <div class="col-md-6" >
+                                    <div class="text-center name-widget">Green to Black</div>
+                                    <div class="number-widget m-t-5">{{state.GreenToBlack}}
+                                    </div>
+                                    <!--<div class="number-widget m-t-5">9,600 Tons-->
+                                    <!--</div>-->
+                                    <!--<div class="trget-widget m-t-5">Target Tons 11,200-->
+                                    <!--</div>-->
+                                </div>
+
+                            </div>
+                            <hr>
+                           <div class="row">
+                               <div class="col-md-12 blackspot-progress-color">
+                                   <div class="text-center">
+                                       <p class="name-widget">Green vs Black Blackspot</p>
+                                   </div>
+                                   <div class="progress">
+                                       <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                                            aria-valuemax="100" style="width:{{Math.round(100*state.TotalGreenspots/(state.TotalGreenspots+state.TotalBlackspots))}}%">
+                                           <span class="sr-only">70% Complete</span>
+                                       </div>
+                                   </div>
+                                   <div class="pull-left number-percent">{{state.TotalGreenspots}}</div>
+                                   <div class="pull-right number-percent">{{state.TotalBlackspots}}</div>
+                               </div>
+                           </div>
+
+                            <!--<div class="name-widget text-center">Total Black Spots</div>-->
+                            <!--<div class="number-widget m-t-5">72,000</div>-->
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="widget">
+                        <div class="widget-heading clearfix">
+                            <div class="pull-left">Vehicles & Transportation</div>
+                            <!--<div class="pull-right"><i class="fa fa-angle-down"></i> 40.5<sup>%</sup></div>-->
+                        </div>
+                        <div class="widget-body clearfix">
+                            <div class="row m-t-10">
+                              <div class="overlay-gif">
+                                 <div class="loading-img"></div>
+                               </div>                                
+                            <div class="col-md-4" style="border-right:1px solid#dedede">
+                                <div class="text-center name-widget">Total </div>
+                                <div class="number-widget m-t-5">{{state.TotalVehicles}}
+                                </div>
+                                <!--<div class="trget-widget">Target Tons 540-->
+                                <!--</div>-->
+                            </div>
+                            <div class="col-md-4" style="border-right:1px solid#dedede">
+                                <div class="text-center name-widget">Reported </div>
+                                <div class="number-widget m-t-5">{{state.VehiclesReported}}
+                                </div>
+                                <!--<div class="trget-widget">Target Tons 540-->
+                                <!--</div>-->
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center name-widget">Average Delay </div>
+                                <div class="number-widget m-t-5">{{state.VehicleAverageDelay}}
+                                </div>
+                                <!--<div class="trget-widget">Target Tons 300-->
+                                <!--</div>-->
+                            </div>
+
+                        </div>
+                            <hr>
+                            <div class="m-t-5">
+                                <div class="name-widget text-center ">Collected Points</div>
+                                <div class="progress m-t-5">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                                         aria-valuemax="100" style="width:{{Math.round(100*state.CoveredCollectionPoints/state.VehicleTotalCollectionPoints)}}%">
+                                        <span class="sr-only">70% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="text-center pull-left number-percent">{{state.CoveredCollectionPoints}}</div>
+                                <div class="pull-right number-percent">{{state.VehicleTotalCollectionPoints}}</div>
+                            </div>
+                            <!--<div class="col-md-12 m-t-10">-->
+                                <!--<div class="col-md-6" style="border-right:1px solid#dedede">-->
+                                    <!--<div class="text-center name-widget">Report Late</div>-->
+                                    <!--<div class="number-widget m-t-5">2,100-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash;<div class="trget-widget">Target Tons 540&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                                <!--</div>-->
+                                <!--<div class="col-md-6">-->
+                                    <!--<div class="text-center name-widget">Break Down</div>-->
+                                    <!--<div class="number-widget m-t-5">900-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash;<div class="trget-widget">Target Tons 300&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--</div>-->
+
+                            <!--</div>-->
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-md-4 ">
+                    <div class="widget">
+                        <div class="widget-heading clearfix">
+                            <div class="pull-left">Coverage</div>
+                            <!--<div class="pull-right"><i class="fa fa-angle-up"></i> 89.9<sup>%</sup></div>-->
+                        </div>
+                        <div class="widget-body clearfix">
+                            <div class="row m-t-10">
+                               <div class="overlay-gif">
+                                 <div class="loading-img"></div>
+                               </div>                                
+                                <div class="col-md-4" style="border-right:1px solid#dedede">
+                                    <div class="text-center name-widget">Total MP</div>
+                                    <div class="number-widget m-t-5">{{state.NoMicropockets}}
+                                    </div>
+                                    <!--<div class="trget-widget">Target Tons 540-->
+                                    <!--</div>-->
+                                </div>
+                                <div class="col-md-4" style="border-right:1px solid#dedede">
+                                    <div class="text-center name-widget">Total Houses </div>
+                                    <div class="number-widget m-t-5">{{state.TotalHouses}}
+                                    </div>
+                                    <!--<div class="trget-widget">Target Tons 540-->
+                                    <!--</div>-->
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-center name-widget">Avg Time /MP </div>
+                                    <div class="number-widget m-t-5">{{state.CoverageAverageTime}}
+                                    </div>
+                                    <!--<div class="trget-widget">Target Tons 300-->
+                                    <!--</div>-->
+                                </div>
+
+                            </div>
+                            <hr>
+                            <div class="m-t-10">
+                                <div class="name-widget text-center m-t-10">Houses Covered</div>
+                                <div class="progress m-t-10">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                                         aria-valuemax="100" style="width:{{Math.round(100*state.CoveredHouses/(state.TotalHouses))}}%">
+                                        <span class="sr-only">70% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="text-center number-percent">{{Math.round(state.CoveredHouses)}}</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+             </div>
+    <!--End databoxes -->
+
+    </div>
+
+
+

@@ -1,0 +1,283 @@
+<div ng-controller="td_weighmentCtrl">
+    <!-- Start contractor-profile -->
+            <div class="row" id="weight_contractor_card" style="display: none;">
+            <div class="col-md-12">
+                <div  class="ulb-contractor-contact-detailss">
+                    <div class="p-t-6">
+                        <div class="col-md-3">
+                            <label>Contractor</label>
+                            <p>{{state.ContractorName}}</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Contact Person</label>
+                            <p>Viswanadh-9948752765</p>
+                        </div>
+                        <div class="col-md-1">
+                            <label>Workpackages</label>
+                            <p>02</p>
+
+                        </div>
+                        <div class="col-md-1">
+                            <label>Wards</label>
+                            <p>40</p>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Micropockets</label>
+                            <p>80</p>
+                        </div>
+                        <div class="col-md-3 p-d-10">
+                            <div  class="ulb-cntrt-mntly-avg">
+                                <a href="http://laurelsolutions.net/kpi_scorecard2/" target="_blank">
+                                <div class="row p-t-5">
+                                    <div class="col-md-4">
+                                        <div class="text-center">
+                                            <label>April</label>
+                                            <p>89%</p>
+                                        </div>
+                                    </div>
+                                <div class="col-md-4">
+                                    <div class="text-center">
+                                    <label>May</label>
+                                    <p>76%</p>
+                                        </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-center">
+                                    <label>June</label>
+                                    <p>81%</p>
+                                        </div>
+                                </div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    <!-- End contractor-profile -->
+    <!-- Start particular-table -->
+    <div class="row m-t-10">
+        <div class="col-md-12">
+            <table class="table m-d-30 table-bordered table-body my-scrollabletable">
+                <thead style="background-color:#f6f8fa;color:#000;">
+                <tr>
+                    <th rowspan="2" class="text-center" style="vertical-align: middle">{{Parent}}</th>
+                    <th rowspan="2" class="text-center" style="vertical-align: middle">Benchmark</th>
+                    <th rowspan="2" class="border-bom-wht"></th>
+                    <th colspan="3" class="text-center">Dry</th>
+                    <th rowspan="2" class="border-bom-wht"></th>
+                    <th colspan="3" class="text-center">Wet</th>
+                    <!--<th rowspan="2" class="border-bom-wht"></th>-->
+                    <!--<th rowspan="2" style="vertical-align: middle" class="text-center">Cleanliness</th>-->
+                    <th  class="border-bom-wht"></th>
+                    <th rowspan="2" style="vertical-align: middle" class="text-center">Total(Kg)</th>
+                    <!--<th rowspan="2" style="vertical-align: middle" class="text-center">Action</th>-->
+                </tr>
+                <tr>
+                    <th class="text-center">Actual (Kg)</th>
+                    <th class="text-center">Target (Kg)</th>
+                    <th class="text-center">variance (%) </th>
+                    <th class="text-center">Actual (Kg)</th>
+                    <th class="text-center">Target (Kg)</th>
+                    <th class="text-center">variance (%)</th>
+                    <th  class="border-bom-wht"></th>
+
+
+                </tr>
+                </thead>
+
+                <tbody style="height:43px;">
+               <div class="overlay-gif">
+                    <div class="loading-img"></div>
+                </div>
+                <!--<tr style="background-color:#f1f1f1;color:#000; font-size:15px">-->
+                <!--<td colspan="3" class="text-center">Bench Mark</td>-->
+                <!--<td>100%</td>-->
+                <!--<td class="text-center">80% <br>(75%Wet/25%Dry)</td>-->
+                <!--<td>80%</td>-->
+                <!--<td>90%</td>-->
+                <!--<td>100%</td>-->
+                <!--<td>100%</td>-->
+                <!--</tr>-->
+                                <tr class="width-adjust">
+                    <td>{{state.Name}}</td>
+                    <td >
+                        <!--<div class="table-name-widget text-center">Total Employess</div>-->
+                        <div class="table-number-widget"><span class="glyphicon glyphicon-ok wt-bencmak-ok-icon"></span></div>
+
+                    </td>
+                    <td class="border-bom-wht"></td>
+                    <td >
+                        <!--<div class="table-name-widget text-center">Total Employess</div>-->
+                        <div class="table-number-widget">{{Math.round(state.Dry)}}</div>
+
+                    </td>
+
+                    <td>
+                        <!--<div class="table-name-widget text-center">Total Employess</div>-->
+                        <div class="table-number-widget">{{state.DryTarget}}</div>
+
+                    </td>
+                    <td>
+                        <div class="table-number-widget">{{state.DryVariance}}</div>
+
+                    </td>
+                    <td  class="border-bom-wht"></td>
+                    <td>
+                        <div class="table-number-widget">{{Math.round(state.Wet)}}</div>
+                    </td>
+                    <td>
+                        <div class="table-number-widget">{{state.WetTarget}}</div>
+                    </td>
+                    <td >
+                        <div class="table-number-widget">{{state.WetVariance}}</div>
+                    </td>
+                    <td  class="border-bom-wht"></td>
+                    <td >
+                        <div class="table-number-widget">{{Math.round(state.Total)}}</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <!-- End particular-table -->
+    <!-- start tooglebuttons -->
+    <directive-preformances add="change_weight_tbl"> </directive-preformances>
+    <!-- End tooglebuttons -->
+     <!--<div class="row">    
+            <div class="col-md-9">
+                <div class="btn-group weight-btn-group" id="weight-btn-group-slide">
+                    <button type="button" id="td_w_regions" class="btn btn-default custom-today-button active" ng-click="change_weight_tbl(btnobj.one)">Regions</button>
+                    <button type="button" id="td_w_districts" class="btn btn-default custom-today-button" ng-click="change_weight_tbl(btnobj.two)">Districts</button>
+                    <button type="button" id="td_w_ulbs" class="btn btn-default custom-today-button" ng-click="change_weight_tbl('ULBS')">ULBS</button>
+                    <button type="button" id="td_w_wps" class="btn btn-default custom-today-button"  ng-click="change_weight_tbl('Work Packages')">Work Packages</button>
+                    <button type="button" id="td_w_wards" class="btn btn-default custom-today-button" ng-click="change_weight_tbl('Wards')">Wards</button>
+                    <button type="button" id="td_w_mps" class="btn btn-default custom-today-button" ng-click="change_weight_tbl('Micropockets')">Micropockets</button>
+                    <button type="button" id="td_w_contractors" class="btn btn-default custom-today-button" ng-click="change_weight_tbl('Contractors')">Contractors</button>
+                </div>
+            </div>
+         <div class="col-md-2 " style="padding-left:5px;" >
+         <div class="btn-group weight-top-btn-group pull-right" id="weight-btn-top-number-group-slide">
+             <button type="button"  class="btn btn-default custom-today-button active" >ALL</button>
+             <button type="button"  class="btn btn-default custom-today-button" >Botom</button>
+             <button type="button"  class="btn btn-default custom-today-button" >Top</button>
+         </div>
+     </div>
+         <div class="col-md-1 p-l-0">
+<select class="form-control btn-10"><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option></select>
+         </div>
+     </div>  -->
+    <!-- Start table -->
+    <div class="row m-t-10 m-d-30">
+        <div class="col-md-12">
+            <table class="table m-d-30 table-bordered table-body my-scrollabletable">
+                <thead style="background-color:#f6f8fa;color:#000;">
+                <tr>
+                    <th rowspan="2" class="text-center" style="vertical-align: middle">{{tablecolname}}</th>
+                    <th rowspan="2" class="text-center" style="vertical-align: middle">Benchmark</th>
+                    <th rowspan="2" class="border-bom-wht"></th>
+                    <th colspan="3" class="text-center">Dry</th>
+                    <th rowspan="2" class="border-bom-wht"></th>
+                    <th colspan="3" class="text-center">Wet</th>
+                    <!--<th rowspan="2" class="border-bom-wht"></th>-->
+                    <!--<th rowspan="2" style="vertical-align: middle" class="text-center">Cleanliness</th>-->
+                    <th  class="border-bom-wht"></th>
+                    <th rowspan="2" style="vertical-align: middle" class="text-center">Total(Kg)</th>
+                    <!--<th rowspan="2" style="vertical-align: middle" class="text-center">Action</th>-->
+                </tr>
+                <tr>
+                    <th class="text-center">Actual (Kg)</th>
+                    <th class="text-center">Target (Kg)</th>
+                    <th class="text-center">variance (%)<i class="fa fa-sort" aria-hidden="true" ng-click="sortBy('DryVariance')"></i> </th>
+                    <th class="text-center">Actual (Kg)</th>
+                    <th class="text-center">Target (Kg)</th>
+                    <th class="text-center">variance (%)<i class="fa fa-sort" aria-hidden="true" ng-click="sortBy('WetVariance')"></i></th>
+                    <th  class="border-bom-wht"></th>
+
+
+                </tr>
+                </thead>
+
+                <tbody>
+                <div class="overlay-gif">
+                    <div class="loading-img"></div>
+                </div>
+                <tr class="width-adjust" ng-repeat="region in regions | limitTo : limitvalue">
+                    <td style="font-size:13px"><a href="" ng-click="weighmentupdateview(region.type,region)">{{region.Name}}</a></td>
+                    <td >
+                        <!--<div class="table-name-widget text-center">Total Employess</div>-->
+                        <div class="table-number-widget"><span class="glyphicon glyphicon-ok wt-bencmak-ok-icon"></span></div>
+
+                    </td>
+                    <td class="border-bom-wht"></td>
+                    <td >
+                        <!--<div class="table-name-widget text-center">Total Employess</div>-->
+                        <div class="table-number-widget">{{Math.round(region.Dry)}}</div>
+
+                    </td>
+
+                    <td>
+                        <!--<div class="table-name-widget text-center">Total Employess</div>-->
+                        <div class="table-number-widget">{{region.DryTarget}}</div>
+
+                    </td>
+                    <td>
+                        <div class="table-number-widget">{{region.DryVariance}}</div>
+
+                    </td>
+                    <td  class="border-bom-wht"></td>
+                    <td>
+                        <div class="table-number-widget">{{Math.round(region.Wet)}}</div>
+                    </td>
+                    <td>
+                        <div class="table-number-widget">{{region.WetTarget}}</div>
+                    </td>
+                    <td>
+                        <div class="table-number-widget">{{region.WetVariance}}</div>
+                    </td>
+                    <td  class="border-bom-wht"></td>
+                    <td >
+                        <div class="table-number-widget">{{Math.round(region.Total)}}</div>
+                    </td>
+                    <!--<td >
+                        <div class="table-number-widget"><a href="javascript:void(0)" ng-click='openNavweighment()'><span class="glyphicon glyphicon-info-sign" style="font-size:22px;"></span></a></div>
+                    </td>-->
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;"><b>Total</b></td>
+                    <td class="border-bom-wht"></td>
+                    <td><div class="table-number-widget">{{groupbysum(regions,'Dry')}}</div></td>
+                    <td><div class="table-number-widget">{{groupbysum(regions,'DryTarget')}}</div></td>
+                    <td><div class="table-number-widget">{{((1-(groupbysum(regions,'Dry')/groupbysum(regions,'DryTarget')))*100).toPrecision(4)}}</div></td>
+                    <td rowspan="2" class="border-bom-wht"></td>
+                    <td><div class="table-number-widget">{{groupbysum(regions,'Wet')}}</div></td>
+                    <td><div class="table-number-widget">{{groupbysum(regions,'WetTarget')}}</div></td>
+                    <td><div class="table-number-widget">{{((1-(groupbysum(regions,'Wet')/groupbysum(regions,'WetTarget')))*100).toPrecision(4)}}</div></td>
+                    <td rowspan="2" class="border-bom-wht"></td>
+                    <td colspan="1"><div class="table-number-widget">{{groupbysum(regions,'Total')}}</div></td>
+                </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- End table -->
+
+
+</div>
+<!--<script>-->
+    <!--function openNavweighment() {-->
+        <!--document.getElementById("myNav-weighment").style.width = "100%";-->
+    <!--}-->
+
+    <!--function closeNavweighment() {-->
+        <!--document.getElementById("myNav-weighment").style.width = "0%";-->
+    <!--}-->
+<!--</script>-->
