@@ -1,3 +1,245 @@
 <div ng-controller="coverage_TodayCtrl">
-<h1>Today Coverage</h1>
+        <div class="row" id="attendance_contractor_card" style="display: none;">
+                <div class="col-md-12">
+                    <div  class="ulb-contractor-contact-detailss">
+                        <div class="p-t-6">
+                            <div class="col-md-3">
+                                <label>Contractor</label>
+                                <p>{{parentarr.ContractorName}}</p>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Contact Person</label>
+                                <p>Viswanadh-9948752765</p>
+                            </div>
+                            <div class="col-md-1">
+                                <label>Workpackages</label>
+                                <p>02</p>
+    
+                            </div>
+                            <div class="col-md-1">
+                                <label>Wards</label>
+                                <p>40</p>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Micropockets</label>
+                                <p>80</p>
+                            </div>
+                            <div class="col-md-3 p-d-10">
+                                <div  class="ulb-cntrt-mntly-avg" >
+                                    <a href="http://laurelsolutions.net/kpi_scorecard2/" target="_blank">
+                                    <div class="row p-t-5">
+                                        <div class="col-md-4">
+                                            <div class="text-center">
+                                                <label>April</label>
+                                                <p>89%</p>
+                                            </div>
+                                        </div>
+                                    <div class="col-md-4">
+                                        <div class="text-center">
+                                        <label>May</label>
+                                        <p>76%</p>
+                                            </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="text-center">
+                                        <label>June</label>
+                                        <p>81%</p>
+                                            </div>
+                                    </div>
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+           <div class="row m-t-10 m-d-30">
+            <div class="col-md-12">
+                <table class="table m-d-30 table-bordered table-body my-scrollabletable">
+                    <thead style="background-color:#f6f8fa;color:#000;">
+                    <tr>
+                        <th rowspan="2" class="text-center" style="vertical-align: middle">{{Parent}}</th>
+                        <!--<th rowspan="2" class="text-center" style="vertical-align: middle">Benchmark</th>-->
+                        <!--<th rowspan="2" class="border-bom-wht"></th>-->
+                        <th rowspan="2" class="text-center">M.P'S</th>
+                        <!--<th  class="border-bom-wht"></th>-->
+                        <th rowspan="2" class="text-center">GATES</th>
+                        <!--<th rowspan="2" class="border-bom-wht"></th>-->                    
+                       
+                    </tr>
+                    </thead>
+    
+                    <tbody style="height:40px;">
+                    <div class="overlay-gif">
+                        <div class="loading-img"></div>
+                    </div>
+                    <tr class="width-adjust">
+                        <td>{{parentarr.Name}}</td>
+                        <!--<td >
+                           
+                            <div class="table-number-widget"><span class="glyphicon glyphicon-ok wt-bencmak-ok-icon"></span></div>
+    
+                        </td>
+                        <td class="border-bom-wht"></td>-->
+                        <td >
+                            <!--<div class="table-name-widget text-center">Total Employess</div>-->
+                            <div class="table-number-widget">{{parentarr.EmployeesPresent}}</div>
+    
+                        </td>
+                        <!--<td  class="border-bom-wht"></td>-->
+                        <td>
+                            <div class="table-number-widget">{{parentarr.TotalEmployees}}</div>
+                        </td>
+                        <!--<td  class="border-bom-wht"></td>-->
+                        <!-- <td >
+                            <div class="table-number-widget">{{((1-parentarr.EmployeesPresent/parentarr.TotalEmployees)*100).toPrecision(4)}}</div>
+                        </td>
+                        <td >
+                            <div class="table-number-widget"><a href="javascript:void(0)" ng-click='openNavweighment(parentarr.Id,parentarr.type,parentarr.Name)'><span class="glyphicon glyphicon-info-sign" style="font-size:22px;"></span></a></div>
+                        </td> -->
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> 
+           <directive-preformances add="change_attendance_tbl"> </directive-preformances>
+        <div class="row m-t-10 m-d-30">
+            <div class="col-md-12">
+                <table class="table m-d-30 table-bordered table-body my-scrollabletable">
+                    <thead style="background-color:#f6f8fa;color:#000;">
+                    <tr>
+                        <th rowspan="2" class="text-center" style="vertical-align: middle">{{tablecolname}} <i class="fa fa-sort" aria-hidden="true" ng-click="sortBy('Name')"></i></th>
+                      
+                        <th rowspan="2" class="text-center">Present</th>
+                        <!--<th  class="border-bom-wht"></th>-->
+                        <th rowspan="2" class="text-center">Total Employees</th>
+                        <!--<th rowspan="2" class="border-bom-wht"></th>-->                    
+                       
+                    </tr>
+                  
+                    </thead>
+    
+                    <tbody>
+                    <div class="overlay-gif">
+                        <div class="loading-img"></div>
+                    </div>
+                    <tr class="width-adjust" ng-repeat="child in childarr  | limitTo : limitvalue">
+                        <td><a href="" ng-click="attendanceupdateview(child.type,child)">{{child.Name}}</a></td>
+                        <!--<td >
+                           
+                            <div class="table-number-widget"><span class="glyphicon glyphicon-ok wt-bencmak-ok-icon"></span></div>
+    
+                        </td>
+                        <td class="border-bom-wht"></td>-->
+                        <td >
+                            <!--<div class="table-name-widget text-center">Total Employess</div>-->
+                            <div class="table-number-widget">{{child.EmployeesPresent}}</div>
+    
+                        </td>
+                        <!--<td  class="border-bom-wht"></td>-->
+                        <td>
+                            <div class="table-number-widget">{{child.TotalEmployees}}</div>
+                        </td>
+                        <!--<td  class="border-bom-wht"></td>-->
+                      
+                            <div class="table-number-widget"><a href="javascript:void(0)" ng-click='openNavweighment(child.Id,child.type,child.Name)'><span class="glyphicon glyphicon-info-sign" style="font-size:22px;"></span></a></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;"><b>Total</b></td>
+                        <td><div class="table-number-widget">{{groupbysum(childarr,'EmployeesPresent')}}</div></td>
+                        <td><div class="table-number-widget">{{groupbysum(childarr,'TotalEmployees')}}</div></td>
+                        <td><div class="table-number-widget">{{((1-(groupbysum(childarr,'EmployeesPresent')/groupbysum(childarr,'TotalEmployees')))*100).toPrecision(4)}}</div></td>
+                        <td style="text-align: center;"></td>
+                    </tr>
+                 </tbody>
+                </table>
+            </div>
+        </div>
+          <div id="myNav-weighment" class="overlay-weightment">
+              <div class="row">
+                  <div class="pull-right">
+                      <a  class="closebtn-weighment " ng-click="closeNavweighment()">Back <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                  </div>
+              </div>
+    
+            <div class="overlay-content-weighment">
+                <div class="col-md-12 m-d-20">
+                    <div class="col-md-3" style="text-align:left">
+                        <div ><span class="overlay-ab-name-label">{{tablecolname}} </span>:<span class="overlay-ab-districtname">{{slidername |capitalize}}</span></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="btn-group weekly" id="btn-group-weeklyactie">
+                            <button type="button" class="btn btn-default custom-today-button active " ng-click="changedata('daily')">Daily</button>
+                            <button type="button" class="btn btn-default custom-today-button" ng-click="changedata('weekly')">Weekly</button>
+                            <button type="button" class="btn btn-default custom-today-button" ng-click="changedata('monthly')">Monthly</button>
+                            <!--<button type="button" class="btn btn-default custom-today-button">Custom</button>-->
+                        </div>
+                    </div>
+                </div>
+    
+                <div class=" m-t-20">
+                    <div class="col-md-12">
+                <table class="table m-d-30 table-bordered table-body my-scrollabletable">
+                    <thead style="background-color:#f6f8fa;color:#000;">
+                    <tr>
+                        <th rowspan="2" class="text-center" style="vertical-align: middle">Date
+                            <!--<i class="fa fa-sort" aria-hidden="true" ng-click="sortBy('Name')"></i>-->
+                            </th>
+                        <!--<th rowspan="2" class="text-center" style="vertical-align: middle">Benchmark</th>-->
+                        <!--<th rowspan="2" class="border-bom-wht"></th>-->
+                        <th rowspan="2" class="text-center">Present</th>
+                        <!--<th  class="border-bom-wht"></th>-->                    
+                        <th rowspan="2" class="text-center">Total Employees</th>
+                        <!--<th rowspan="2" class="border-bom-wht"></th>-->
+                        <th rowspan="2" style="vertical-align: middle" class="text-center">Variance</th>
+                        <!--<th rowspan="2" style="vertical-align: middle" class="text-center">Action</th>-->
+                    </tr>
+                  
+                    </thead>
+    
+                    <tbody>
+                     <div class="overlay-gif">
+                        <div class="loading-img"></div>
+                    </div>
+                    <tr class="width-adjust" ng-repeat="(key,items) in dailydata|groupBy:groupbyitem">
+                       <td>{{key}}{{groupbyitem=='PeriodName'?'('+items[0].Date+' - '+items[items.length-1].Date+')':""}}
+                            {{groupbyitem=='Month'?'('+items[0].Date+' - '+items[items.length-1].Date+')':""}}
+                        </td>
+                        <td >
+                            <!--<div class="table-name-widget text-center">Total Employess</div>-->
+                            <div class="table-number-widget">{{groupbysum(items,'EmployeesPresent')}}</div>
+    
+                        </td>
+                        <!--<td  class="border-bom-wht"></td>-->
+                        <td>
+                            <div class="table-number-widget">{{groupbysum(items,'TotalEmployees')}}</div>
+                        </td>
+                        <!--<td  class="border-bom-wht"></td>-->
+                        <td >
+                            <div class="table-number-widget">{{(groupbysum(items,'Variance')/items.length).toPrecision(4)}}</div>
+                        </td>
+                        <!--<td >
+                            <div class="table-number-widget"><a href="javascript:void(0)" ng-click='openNavweighment(child.Id,child.type)'><span class="glyphicon glyphicon-info-sign" style="font-size:22px;"></span></a></div>
+                        </td>-->
+                    </tr>
+                    <!--<tr>
+                        <td style="text-align: center;"><b>Total</b></td>
+                       <td><div class="table-number-widget">{{groupbysum(dailydata,'EmployeesPresent')}}</div></td>
+                         <td><div class="table-number-widget">{{groupbysum(dailydata,'TotalEmployees')}}</div></td>
+                        <td><div class="table-number-widget">{{(groupbysum(dailydata,'Variance')/dailydata.length).toPrecision(4)}}</div></td>
+                       
+                    </tr>-->
+                   </tbody>
+                </table>
+                    </div>
+    
+                </div>
+    
+            </div>
+        </div>    
 </div>
